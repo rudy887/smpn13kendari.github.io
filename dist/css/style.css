@@ -82,7 +82,7 @@ main {
 
 /* Hero */
 .hero {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.518), rgba(0, 0, 0, 0.244)), url(/assets/images/hero.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.518), rgba(0, 0, 0, 0.244)), url(assets/images/hero.jpg);
   width: 100%;
   padding: 150px 20px;
   background-size: cover;
