@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SMPN 13 KENDARI</title>
+
+    <!-- Fav Icon -->
+    <link rel="shortcut icon" href="/assets/icon/favicon.ico" type="image/x-icon" />
+
+    <!-- CSS -->
+    <style>
+        /* Reset & Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Poppins", serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  padding-top: 70px; /* tambahkan ini agar konten tidak tertutup navbar */
+}
+
+.container {
+  width: 90%;
+  margin-inline: auto;
+}
+
+@media (max-width: 992px) {
+  .container {
+    width: 90%;
+  }
+}
+
+/* Navbar Start */
+.navbar {
+  display: none;
+  position: fixed; /* diubah dari default ke fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white; /* beri background agar tidak transparan */
+  z-index: 1000; /* pastikan di atas konten lain */
+  padding: 10px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* opsional: bayangan agar terlihat */
+}
+.navbar-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-box .menu {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.navbar-box .menu li {
+  list-style-type: none;
+}
+
+.navbar-box .menu li a {
+  text-decoration: none;
+  color: black;
+}
+
+@media (max-width: 795px) {
+  .navbar-box {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .navbar-box .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+}
+/* Navbar End */
+
+
+/* Hero */
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.518), rgba(0, 0, 0, 0.244)), url(/assets/images/hero.jpg);
+  width: 100%;
+  padding: 150px 20px;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-box {
+  color: white;
+}
+.hero-box h1 {
+  margin-bottom: 20px;
+  font-weight:600;
+  font-size: 40px;
+}
+.hero-box p {
+  margin-bottom: 30px;
+  line-height: 1.5;
+  font-size: 20px;
+}
+.hero-box a {
+  text-decoration: none;
+  color: white;
+  border: 2px solid white;
+  padding: 10px 40px;
+  border-radius: 50px;
+}
+.hero-box a:hover {
+  background-color: white;
+  color: black;
+  border-color: rgb(78, 78, 78);
+}
+
+@media (max-width: 575px) {
+  .hero-box h1,
+  .hero-box p,
+  .hero-box {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 775px) {
+  .hero-box h1 {
+    width: 100%;
+  }
+}
+
+/* About */
+.about {
+  padding: 100px 0;
+}
+.about-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+.about-box img {
+  width: 100%;
+  height: 100%;
+}
+.about-box h3 {
+  font-size: 25px;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+.about-box p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.counter{
+  background-color: rgba(0, 0, 0, 0.041);
+  margin-top: 100px;
+}
+.about .counter {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.about .counter h2{
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.about .counter h2 span {
+  color: indigo;
+  font-size: 40px;
+}
+
+@media (max-width: 675px) {
+  .about .counter {
+    font-size: 80%;
+    flex-direction: column;
+  }
+  .about .counter h2 span {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about .counter {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 987px) {
+  .about-box {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Akademik */
+.akademik {
+  padding-bottom: 100px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.akademik-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.akademik-box .box {
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+}
+.akademik-box img {
+  width: 100%;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+.akademik-box .desc {
+  padding: 20px;
+}
+
+/* SPMB */
+.spmb {
+  padding: 100px 0;
+  margin-bottom: 20px;
+}
+.spmb-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+.spmb-box img {
+  width: 100%;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+}
+.spmb-box h2 {
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 500;
+}
+.spmb-box p {
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+.spmb-box a {
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+  background-color: rgb(0, 211, 32);
+  padding: 12px 50px;
+  border-radius: 50px;
+}
+.spmb-box a:hover {
+  color: white;
+  background-color: indigo;
+  padding: 10px 30px;
+  border-radius: 20px;
+}
+
+@media (max-width: 937px) {
+  .spmb-box {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Footer */
+footer {
+  background-color: black;
+  padding: 30px;
+  color: white;
+  text-align: center;
+}
+.copyright p {
+  font-size: 14px;
+}
+.copyright p span {
+  font-weight: bold;
+  color: rgb(243, 219, 0);
+}
+.copyright p img {
+  size: 100%;
+}
+
+    </style>
+
+    <!-- Font Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Navbar-->
+      <div class="navbar">
+        <div class="container">
+          <div class="navbar-box">
+            <div class="logo">
+              <h1>SMPN<span>13</span></h1>
+            </div>
+            <ul class="menu">
+              <li><a href="#">Beranda</a></li>
+              <li><a href="#">Tentang Kami</a></li>
+              <li><a href="#">Akademik</a></li>
+              <li><a href="#">PPDB</a></li>
+              <li><a href="#">Kontak</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!--Navbar -->
+
+      <!-- Main content -->
+      <main>
+        <!-- Hero -->
+        <div class="hero">
+          <div class="container">
+            <div class="hero-box">
+              <h1>Selamat Datang di<br />SMP Negeri 13 Kendari</h1>
+              <p>
+                Menciptakan generasi cerdas, berkarakter, dan siap menghadapi tantangan masa depan.
+              </p>
+              <a href="#">About Us</a>
+            </div>
+          </div>
+        </div>
+        <!-- Hero -->
+
+        <!-- About Us -->
+        <div class="about">
+          <div class="container">
+            <div class="about-box">
+              <div class="box">
+                <img src="assets/images/tentang.jpg" alt="about" />
+              </div>
+              <div class="box">
+                <h3>Komintmen kami dalam mencerdaskan kehidupan bangsa?</h3>
+                <p>
+                  Komitmen kami adalah menciptakan generasi cerdas, berkarakter, dan siap menghadapi tantangan masa depan. Dengan tenaga pendidik profesional dan lingkungan belajar yang nyaman, kami mengembangkan potensi siswa melalui pendekatan pembelajaran aktif, kreatif, dan berteknologi. Kami percaya bahwa pendidikan terbaik dimulai dari kepedulian dan kolaborasi.
+                </p>
+              </div>
+            </div>
+
+            <div class="counter">
+              <div class="box">
+                <h2><span>500+</span><br />Peserta Didik</h2>
+              </div>
+              <div class="box">
+                <h2><span>30+</span><br />Tenaga Guru</h2>
+              </div>
+              <div class="box">
+                <h2><span>100+</span><br />Kejuaraan</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- About Us -->
+
+        <!-- Akademik -->
+        <div class="akademik">
+          <div class="container">
+            <div class="akademik-box">
+              <div class="box">
+                <img src="assets/images/literasi.webp" alt="akimage" />
+                <div class="desc">
+                  <h2>Literasi</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, voluptatibus!<br /><a href="#">Read More...</a>
+                  </p>
+                </div>
+              </div>
+              <div class="box">
+                <img src="assets/images/kreatifitas.webp" alt="akimage" />
+                <div class="desc">
+                  <h2>Kreatifitas</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, voluptatibus!<br /><a href="#">Read More...</a>
+                  </p>
+                </div>
+              </div>
+              <div class="box">
+                <img src="assets/images/praktek.webp" alt="akimage" />
+                <div class="desc">
+                  <h2>Praktek</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, voluptatibus!<br /><a href="#">Read More...</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Akademik -->
+
+        <!-- SPMB -->
+        <div class="spmb">
+          <div class="container">
+            <div class="spmb-box">
+              <div class="box">
+                <img src="assets/images/ppdb.jpg" alt="img-spmb" />
+              </div>
+              <div class="box">
+                <h2>Sistem Penerimaan Murid Baru (SPMB)</h2>
+                <p>
+                  Sistem Penerimaan Murid Baru di SMP Negeri 13 Kendari dilaksanakan secara transparan, adil, dan akuntabel, sesuai dengan peraturan dan pedoman resmi pemerintah melalui Dinas Pendidikan dan Kebudayaan Kota Kendari. Proses seleksi didasarkan pada prinsip pemerataan akses pendidikan, tanpa diskriminasi, serta menjamin setiap calon peserta didik memiliki kesempatan yang sama untuk diterima berdasarkan ketentuan yang berlaku.
+                </p>
+                <a href="#">SPMB >></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- SPMB -->
+      </main>
+
+      <!-- Footer -->
+      <footer>
+        <div class="copyright">
+          <p>&copy; Copyright <span>TeamDapo13</span> All Rights Reserved</p> 
+        </div>
+      </footer>
+      <!-- Footer -->
+    </div>
+
+    <!-- JS -->
+    <script src="dist/js/script.js"></script>
+    <script>
+  document.querySelector(".navbar").classList.add("hidden");
+  document.querySelector("main").style.paddingTop = "0";
+</script>
+  </body>
+</html>
